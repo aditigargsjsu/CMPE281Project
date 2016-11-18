@@ -15,6 +15,7 @@
 <script type="text/javascript">
 function go(action,id)
     	{
+    	
     		$('form#form1').attr('action',action);
     		$('#admineditid').val(id);
     		$('form#form1').submit();
@@ -43,7 +44,7 @@ function go(action,id)
                         <a href="#"></a>
                     </li>
                     <li class="page-scroll" style="font-size:20px;">
-                        <a href='/admin'>  Admin  </a>
+                        <a href='/admin'>  User  </a>
                     </li>
                     <li class="page-scroll" style="font-size:20px;">
                         <a href='/sensor'>  Sensor  </a>
@@ -51,8 +52,11 @@ function go(action,id)
                     <li class="page-scroll" style="font-size:20px;">
                         <a href='/sensorowner'>  Vendor  </a>
                     </li>
-                    <li class="page-scroll" style="font-size:20px;">
+                    <!--<li class="page-scroll" style="font-size:20px;">
                         <a href="/user">  User  </a>
+                    </li>-->
+                   <li class="page-scroll" style="font-size:20px;">
+                        <a href='https://54.213.240.232/'>  AWS Dashboard  </a>
                     </li>
                     <li class="page-scroll" style="font-size:20px;">
                         <a href='/signout'>  Signout  </a>
@@ -69,17 +73,15 @@ function go(action,id)
 <% for(var i in data) 
 	            {                     
             %>
-<div style="color:white;margin-left:58px;"><H2>EDIT ADMIN DETAILS<H2></div>
-<form style="margin-left:58px;" method="get" action="/usereditnew" id="form1">
-<label>Email</label> <textarea rows="1" cols="50" name="email" style="margin-left:86px; margin-bottom:-6px; color:black;" ><%=data[i].email %></textarea></b><br/>
-<label>First Name</label> <textarea rows="1" cols="50" name="firstname" style="margin-left:50px; margin-bottom:-6px; color:black;" ><%=data[i].firstname %></textarea></b><br/>
-<label>Last Name</label> <textarea rows="1" cols="50" name="lastname" style="margin-left:53px; margin-bottom:-6px; color:black;" ><%=data[i].lastname %></textarea></b><br/>
-<label>Password</label> <textarea rows="1" cols="50" name="password" style="margin-left:59px; margin-bottom:-6px; color:black;" ><%=data[i].password %></textarea></b><br/>
-<label>Mobile</label> <textarea rows="1" cols="50" name="mobile" style="margin-left:77px; margin-bottom:-6px; color:black;" ><%=data[i].mobile %></textarea></b><br/>
-<label>Billing Id</label> <textarea rows="1" cols="50" name="billingid" style="margin-left:66px; margin-bottom:-6px; color:black;" ><%=data[i].billingid %></textarea></b><br/>
+<div style="color:white;margin-left:98px;"><H2>EDIT USER DETAILS<H2></div>
+<form style="margin-left:58px;" method="get" action="/admineditnew" id="form1">
+<label>First Name</label> <textarea type="text" rows="1" cols="50" name="firstname" style="margin-left:50px; margin-bottom:-6px; color:black;" ><%=data[i].firstname %></textarea></b><br/>
+<label>Last Name</label> <textarea type="text" rows="1" cols="50" name="lastname" style="margin-left:53px; margin-bottom:-6px; color:black;" ><%=data[i].lastname %></textarea></b><br/>
+<label>Password</label> <textarea type="text" rows="1" cols="50" name="password" style="margin-left:59px; margin-bottom:-6px; color:black;" ><%=data[i].password %></textarea></b><br/>
+<label>Mobile</label> <textarea type="number" rows="1" cols="50" name="mobile" style="margin-left:77px; margin-bottom:-6px; color:black;" ><%=data[i].mobile %></textarea></b><br/>
 <label>Security</label> <textarea rows="1" cols="50" name="securityques" style="margin-left:68px; margin-bottom:-6px; color:black;" ><%=data[i].securityques %></textarea></b><br/>
 <input type="hidden" name="admineditid" id="admineditid"/><br/>
-<button type="button" style="width:200px;margin-left:40px;color:black" onclick="go('/usereditnew','<%=data[i].id_primarykey %>');" >update</button>
+<button type="button" style="width:200px;margin-left:40px;color:black;" onclick="go('/admineditnew','<%=data[i].id_primarykey %>');" >update</button>
 
 </form>
 

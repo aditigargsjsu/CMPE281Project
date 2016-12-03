@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<link rel="stylesheet" href="/stylesheets/styles.css">
+	<link href="/stylesheets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/stylesheets/css/agency.css" rel="stylesheet">
+	<link href="/stylesheets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    
+
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+</head>
+
+<body id="page-top" class="index" style="background-image:url(/stylesheets/img/72.jpg); color: white">
+<nav class="navbar navbar-default navbar-fixed-top">
+
+        <div class="container">
+           <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+               <!-- <a class="navbar-brand" href="#page-top">Environment Tracker</a>-->
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#"></a>
+                    </li>
+                    <li class="page-scroll" style="font-size:20px;">
+                        <a href='/vendor_vendor'>  User </a>
+                    </li>
+                    <li class="page-scroll" style="font-size:20px;">
+                        <a href='/vendor_billingplan'> Billing Plan Information </a>
+                    </li>
+                    <li class="page-scroll" style="font-size:20px;">
+                                              <a href="/vendor_controller">  Cluster  </a>
+                                            </li>
+                    <li class="page-scroll" style="font-size:20px;">
+                    <a href='/vendor_sensor'>  Sensor Information  </a>
+                    </li>
+					
+					<li class="page-scroll" style="font-size:20px;">
+                        <a href='/cloud_res_monitor'>  Cloud Resource Monitor  </a>
+                    </li>
+					
+                    <li class="page-scroll" style="font-size:20px;">
+                    <a href='/signout'>  Signout  </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+<br/><br/><br/><br/><br/>
+<!--<br/>-->
+ <!--<header>
+      <div style="text-align: center; height: 100px; background:#2c3e50;display : flex; align-items : center;">
+      <h1> Cloud Resource Monitor </h1>
+      </div>
+</header>
+<br/><br/>-->
+<div style="color:white;margin-left:110px;"><H2>Cloud Resource Monitor</H2></div>
+<!--<center>-->
+<div class="container" style="color:white;margin-left:108px;">
+      <h2>Single Sensor </h2>
+      <table style="border:1px solid white;">
+      <tr style="background-color:#2c3e50; border: 1px solid white;">
+        <th style="border: 1px solid white; padding:4px 10px 4px 10px;"> Sensor ID</th>
+        <th style="border: 1px solid white;padding:4px 10px 4px 10px;"> Type </th>
+        <th style="border: 1px solid white;padding:4px 10px 4px 10px;">Deployment</th>
+        <th style="border: 1px solid white;padding:4px 10px 4px 10px;">Route</th>
+        <th style="border: 1px solid white;padding:4px 10px 4px 10px;">Status</th>
+      </tr>
+
+<% for(var i=0 in single_sensor){                     
+            %>
+<tr style="background-color:#2c3e50; border: 1px solid white;">
+<td style="border: 1px solid white;padding:4px 10px 4px 10px;">
+
+           <%= single_sensor[i].SensorID %> <br/>      
+</td>
+<td style="border: 1px solid white;padding:4px 10px 4px 10px;">
+          <%= single_sensor[i].Type %> <br/>  
+</td>
+<td style="border: 1px solid white;padding:4px 10px 4px 10px;">
+           <%= single_sensor[i].Deployment %> <br/>  
+</td>
+<td style="border: 1px solid white;padding:4px 10px 4px 10px;">
+           <%= single_sensor[i].Route %> <br/> 
+</td>
+<td style="border: 1px solid white;padding:4px 10px 4px 10px;">
+           <%= single_sensor[i].Status %> <br/> 
+</td>
+</tr>
+<% 
+              }  
+         %>
+      </table>
+      <br><!--<br><br>-->
+      <h2>Sensor Cluster </h2>
+      <table style="border:1px solid white;">
+      <tr style="background-color:#2c3e50; border: 1px solid white;">
+        <th style="border: 1px solid white; padding:4px 10px 4px 10px;"> Sensor Cluster ID</th>
+        <th style="border: 1px solid white;padding:4px 10px 4px 10px;">Sensor Number</th>
+        <th style="border: 1px solid white;padding:4px 10px 4px 10px;"> Type </th>
+        <th style="border: 1px solid white;padding:4px 10px 4px 10px;">Deployment</th>
+        <th style="border: 1px solid white;padding:4px 10px 4px 10px;">Route</th>
+        <th style="border: 1px solid white;padding:4px 10px 4px 10px;">Status</th>
+      </tr>
+      
+<% for(var i=0 in sensor_cluster){                     
+            %>
+<tr style="background-color:#2c3e50; border: 1px solid white;">
+<td style="border: 1px solid white;padding:4px 10px 4px 10px;">
+
+           <%= sensor_cluster[i].SensorClusterID %> <br/>  
+        
+ </td>
+ <td style="border: 1px solid white;padding:4px 10px 4px 10px;">
+
+           <%= sensor_cluster[i].SensorNum %> <br/>  
+        
+ </td>
+<td style="border: 1px solid white;padding:4px 10px 4px 10px;">
+          <%= sensor_cluster[i].Type %> <br/>  
+ </td>
+<td style="border: 1px solid white;padding:4px 10px 4px 10px;">
+           <%= sensor_cluster[i].Deployment %> <br/>  
+ </td>
+ <td style="border: 1px solid white;padding:4px 10px 4px 10px;">
+           <%= sensor_cluster[i].Route %> <br/> 
+ </td>
+ <td style="border: 1px solid white;padding:4px 10px 4px 10px;">
+           <%= sensor_cluster[i].Status %> <br/> 
+ </td>
+</tr>
+<% 
+              }  
+         %>
+      </table> </div>
+    <!--</center>-->
+		</body>
+</html>
